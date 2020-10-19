@@ -70,7 +70,9 @@ mod writer;
 
 /// The wire messages used by the protocol.
 pub mod schema {
-    include!(concat!(env!("OUT_DIR"), "/hypercore.schema.rs"));
+    // FIXME: Bazel build to generate this file does not work, so let's just save it to src/ for now
+    // include!(concat!(env!("OUT_DIR"), "/hypercore.schema.rs"));
+    include!("hypercore.schema.rs");
     pub use crate::message::ExtensionMessage;
 }
 
